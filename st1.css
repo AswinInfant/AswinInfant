@@ -17,40 +17,41 @@
 .cardcard {
   width: 30%;
 
-  background: #fff;
+  background: #051e3d;
 
   margin-bottom: 25px;
-  transition: 0.3s;
+ 
 }
 
 .card-headercard {
   text-align: center;
   padding: 10px 10px;
-  background-color: black;
-  color: #fff;
+  background-color: #051e3d;
+  color: white;
   font-size: 14px;
 }
 
 .card-bodycard {
   padding: 30px 20px;
   text-align: center;
-  font-size: 18px;  border: 2px solid black;
+  font-size: 18px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 10);
 }
 
 .card-bodycard .btn {
   display: block;
   color: #fff;
   text-align: center;
-  background-color: black;
+  background-color: #051e3d;
   margin-top: 30px;
   text-decoration: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 5);
   padding: 10px 5px;
 }
 .card-bodycard .btn:hover{
   background:transparent;
   box-shadow:0 0 20px #818181;
 transition: .5s;
-color:black;
+color:white;
 
 }
 .cardcard:hover {
@@ -84,10 +85,25 @@ color:black;
   position: relative;
   transform: translateY(150px);
   opacity: 0;
-  transition: all 2s ease;
+  transition: all 1s ease;
 }
 
 .reveal.active{
   transform: translateY(0px);
   opacity: 1;
+}
+.reveal1{
+  position: relative;
+  left:-100px;
+  opacity: 0;
+  transition: all 1s ease;
+}
+
+.reveal1.active{
+  left:0;
+  opacity: 1;
+}
+
+.foot{
+  text-align: center;
 }
