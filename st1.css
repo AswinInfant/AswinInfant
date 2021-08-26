@@ -144,7 +144,9 @@ box-shadow:0 0 40px #818181;
    
 }
 
-
+button {
+  border: none;
+}
 .submit {
    cursor: pointer;
    position: relative;
