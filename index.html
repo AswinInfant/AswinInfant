@@ -555,6 +555,17 @@ box-shadow:0 0 40px #818181;
   transition: .5s;
   text-shadow: 0 0 5px white;
 }
+.fa-envelope{
+  color:white;
+  font-size: 30px;
+  text-decoration: none;
+
+}
+.fa-envelope:hover{
+ color:#051e3d;
+  transition: .5s;
+  text-shadow: 0 0 5px white;
+}
 
 
 
@@ -675,7 +686,7 @@ box-shadow:0 0 40px #818181;
 
 .cool-link:hover::after {
     width: 100%;
-    //transition: width .75s;
+    transition: width .75s;
 }
  
 </style>
@@ -688,7 +699,7 @@ box-shadow:0 0 40px #818181;
   
 <a href="https://aswininfant.me/" class="lo"><img src="llll.png"  style="width:60px" ></a>
 
-  <a class="cool-link" href="#contact" >Contact </a>
+  <a class="cool-link" href="#contactme" >Contact </a>
   <a class="cool-link" href="#works">Projects</a>
     <a class="cool-link" href="#skills">Skills</a>
   <a class="cool-link" href="#experience">Experience</a>
@@ -705,7 +716,7 @@ box-shadow:0 0 40px #818181;
     <a class="cool-link" href="#experience" onclick="closeNav()">Experience</a>
         <a class="cool-link" href="#skills" onclick="closeNav()">Skills</a>
     <a class="cool-link" href="#works" onclick="closeNav()">Projects</a>
-    <a class="cool-link" href="#contact" onclick="closeNav()">Contact</a>
+    <a class="cool-link" href="#contactme" onclick="closeNav()">Contact</a>
   </div>
 </div>
 
@@ -1201,19 +1212,86 @@ box-shadow:0 0 40px #818181;
         </div>
       </div>
 
+
     </div>
   </div>
 
 
 
-<div class="contact reveal" id="contact">
+<div class="contact reveal" id="contactme">
 <h1>Get in touch with me</h1>
+<div class="contactme">
+  
+      <form id="contact" method="post">
+        <p id="status" style="color:grey"></p>
+          <input
+            placeholder="Your name"
+            type="text"
+            required
+            class="username"
+          />
+          <input type="email" placeholder="Email Id"
+            required class="email">
 
-<h2></h2>
-<p><a href="mailto:ashinfant@gmail.com" style="text-decoration: none;color: white;"><u>ashinfant@gmail.com</u></a></p>
-  <p><u>9677715667</u></p>
+          <textarea
+            placeholder="Type your message here...."
+            required
+            class="message"
+          ></textarea>
 
+          <button
+            name="submit"
+            type="submit"
+            id="contact-submit"
+            class="submit"
+          >
+            Send Message
+          </button>
 
+      </form>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+
+      (function () {
+        emailjs.init("user_Vyg8MnIcgsOzXpZuTCWPz");
+      })();
+
+      function validate() {
+        let name = document.querySelector(".username");
+        let email = document.querySelector(".email");
+        let msg = document.querySelector(".message");
+        let btn = document.querySelector(".submit");
+
+        btn.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (name.value == "" || email.value == "" || msg.value == "") {
+            emptyerror();
+          } else {
+
+            sendmail(name.value, email.value, msg.value);
+            document.getElementById("status").innerHTML='Message received!! Will get in touch with you soon..';
+            document.getElementById("contact").reset();
+          }
+        });
+      }
+      validate();
+      function sendmail(name, email, msg) {
+        emailjs.send("service_ivvhc19", "template_af7dm4q", {
+          to_name: "Aswin",
+          from_name: email,
+          message: msg,
+        });
+      }
+
+         </script>
+
+<br>
+<br>
+
+<a href="mailto:ashinfant@gmail.com" target="_blank" class="fa fa-envelope"></a>
 <a href="https://www.linkedin.com/in/aswininfant/" target="_blank" class="fa fa-linkedin"></a>
 <a href="https://github.com/AswinInfant" target="_blank" class="fa fa-github"></a>
 <a href="https://www.instagram.com/aswin_infant/" target="_blank" class="fa fa-instagram"></a>
